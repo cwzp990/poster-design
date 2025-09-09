@@ -11,23 +11,27 @@
     <div :style="state.style" class="top-nav">
       <div class="top-nav-wrap">
         <div class="top-left">
-          <div class="name" @click="jump2home">{{ state.APP_NAME }}</div>
+          <!-- <div class="name" @click="jump2home">{{ state.APP_NAME }}</div> -->
           <div class="operation">
             <div :class="['operation-item', { disable: !undoable }]" @click="undoable ? handleHistory('undo') : ''"><i class="iconfont icon-undo" /></div>
             <div :class="['operation-item', { disable: !redoable }]" @click="redoable ? handleHistory('redo') : ''"><i class="iconfont icon-redo" /></div>
           </div>
-          <el-divider direction="vertical" />
-          <Folder @select="dealWith" ref="ref1"> <div class="operation-item"><i class="icon sd-wenjian" /> <span class="text" >文件</span></div> </Folder>
-          <Helper @select="dealWith"> <div class="operation-item"><i class="icon sd-bangzhu" /> <span class="text" >帮助</span></div> </Helper>
-          <!-- <el-tooltip effect="dark" :show-after="300" :offset="0" content="标尺" placement="bottom">
+          <!-- <el-divider direction="vertical" />
+          <Folder @select="dealWith" ref="ref1">
+            <div class="operation-item"><i class="icon sd-wenjian" /> <span class="text">文件</span></div>
+          </Folder>
+          <Helper @select="dealWith">
+            <div class="operation-item"><i class="icon sd-bangzhu" /> <span class="text">帮助</span></div>
+          </Helper>
+          <el-tooltip effect="dark" :show-after="300" :offset="0" content="标尺" placement="bottom">
             <i style="font-size: 20px" class="icon sd-biaochi operation-item" @click="changeLineGuides" />
-          </el-tooltip> -->
-          <el-divider direction="vertical" />
+          </el-tooltip>
+          <el-divider direction="vertical" /> -->
         </div>
-        <HeaderOptions ref="optionsRef" v-model="state.isContinue" @change="optionsChange">
-          <!-- <el-button size="large" class="primary-btn" @click="dealWith('save')">{{ $t('header.save') }}</el-button> -->
+        <!-- <HeaderOptions ref="optionsRef" v-model="state.isContinue" @change="optionsChange">
+          <el-button size="large" class="primary-btn" @click="dealWith('save')">{{ $t('header.save') }}</el-button>
           <el-button ref="ref4" size="large" class="primary-btn" type="primary" @click="dealWith('download')">{{ $t('header.download') }}</el-button>
-        </HeaderOptions>
+        </HeaderOptions> -->
       </div>
     </div>
     <div class="page-design-index-wrap">
@@ -51,14 +55,7 @@
     <!-- 旋转缩放组件 -->
     <Moveable />
     <!-- 遮罩百分比进度条 -->
-    <ProgressLoading
-      :percent="state.downloadPercent"
-      :text="state.downloadText"
-      :msg="state.downloadMsg"
-      cancelText="取消"
-      @cancel="downloadCancel"
-      @done="state.downloadPercent = 0"
-    />
+    <ProgressLoading :percent="state.downloadPercent" :text="state.downloadText" :msg="state.downloadMsg" cancelText="取消" @cancel="downloadCancel" @done="state.downloadPercent = 0" />
     <!-- 漫游导航 -->
     <Tour ref="tourRef" :steps="[ref1, ref2, ref3, ref4]" />
     <!-- 创建设计 -->
@@ -68,10 +65,7 @@
 
 <script lang="ts" setup>
 import _config from '../config'
-import {
-  CSSProperties, computed, nextTick,
-  onBeforeUnmount, onMounted, reactive, ref, Ref
-} from 'vue'
+import { CSSProperties, computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, Ref } from 'vue'
 import RightClickMenu from '@/components/business/right-click-menu/RcMenu.vue'
 import Moveable from '@/components/business/moveable/Moveable.vue'
 import designBoard from '@/components/modules/layout/designBoard/index.vue'
@@ -136,8 +130,8 @@ const createDesignRef: Ref<typeof createDesign | null> = ref(null)
 
 const beforeUnload = function (e: Event): any {
   if (dHistoryStack.value.changes.length > 0) {
-    const confirmationMessage: string = '系统不会自动保存您未修改的内容';
-    (e || window.event).returnValue = (confirmationMessage as any) // Gecko and Trident
+    const confirmationMessage: string = '系统不会自动保存您未修改的内容'
+    ;(e || window.event).returnValue = confirmationMessage as any // Gecko and Trident
     return confirmationMessage // Gecko and WebKit
   } else return false
 }
@@ -153,7 +147,7 @@ function jump2home() {
 const undoable = computed(() => {
   return dHistoryParams.value.stackPointer >= 0
   // return !(
-  //   dHistoryParams.value.index === -1 || 
+  //   dHistoryParams.value.index === -1 ||
   //   (dHistoryParams.value.index === 0 && dHistoryParams.value.length === dHistoryParams.value.maxLength))
 })
 
@@ -199,7 +193,7 @@ onBeforeUnmount(() => {
   document.oncontextmenu = null
 })
 
-function handleHistory(data: "undo" | "redo") {
+function handleHistory(data: 'undo' | 'redo') {
   historyStore.handleHistory(data)
 }
 
@@ -229,7 +223,7 @@ function fixTopBarScroll() {
   state.style.left = `-${scrollLeft}px`
 }
 
-function optionsChange({ downloadPercent, downloadText, downloadMsg }: { downloadPercent: number, downloadText: string, downloadMsg?: string }) {
+function optionsChange({ downloadPercent, downloadText, downloadMsg }: { downloadPercent: number; downloadText: string; downloadMsg?: string }) {
   state.downloadPercent = downloadPercent
   state.downloadText = downloadText
   state.downloadMsg = downloadMsg
@@ -249,7 +243,7 @@ const fns: any = {
   changeLineGuides,
   newDesign: () => {
     createDesignRef.value?.open()
-  }
+  },
 }
 const dealWith = (fnName: string, params?: any) => {
   fns[fnName](params)

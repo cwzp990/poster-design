@@ -7,7 +7,7 @@
           <p>{{ item.name }}</p>
         </li>
       </ul>
-      <a href="https://github.com/palxiao/poster-design" target="_blank" class="github"><img src="https://fe-doc.palxp.cn/images/github.svg" alt="Github" title="Github" /> 源码</a>
+      <!-- <a href="https://github.com/palxiao/poster-design" target="_blank" class="github"><img src="https://fe-doc.palxp.cn/images/github.svg" alt="Github" title="Github" />   </a> -->
     </div>
     <div v-show="state.active" class="widget-wrap">
       <keep-alive>
@@ -27,7 +27,7 @@
 // 组件面板
 // const NAME = 'widget-panel'
 import widgetClassifyListData from '@/assets/data/WidgetClassifyList'
-import { reactive, onMounted, watch, nextTick, } from 'vue'
+import { reactive, onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -57,7 +57,7 @@ watch(
 )
 
 defineExpose({
-  clickClassify
+  clickClassify,
 })
 </script>
 
@@ -139,7 +139,7 @@ defineExpose({
   }
   .widget-wrap {
     width: 328px;
-    transition: all .3s;
+    transition: all 0.3s;
     background-color: @color-white;
     flex: 1;
     height: 100%;
