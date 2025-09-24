@@ -15,7 +15,7 @@
         {{ item.text }}
       </div>
     </ul>
-    <el-button class="upload-psd" plain type="primary" @click="openPSD">导入 PSD 创建组合</el-button>
+    <!-- <el-button class="upload-psd" plain type="primary" @click="openPSD">导入 PSD 创建组合</el-button> -->
     <div class="other-text-wrap">
       <comp-list-wrap />
     </div>

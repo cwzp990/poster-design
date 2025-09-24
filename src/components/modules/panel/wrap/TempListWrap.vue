@@ -13,7 +13,7 @@
       <span style="font-weight: bold">{{ state.title }}</span>
     </el-divider>
 
-    <el-button class="upload-psd" plain type="primary" @click="openPSD">导入 PSD 创建模板</el-button>
+    <!-- <el-button class="upload-psd" plain type="primary" @click="openPSD">导入 PSD 创建模板</el-button> -->
 
     <ul ref="listRef" v-infinite-scroll="load" class="infinite-list" :infinite-scroll-distance="150" style="overflow: auto">
       <img-water-fall :listData="state.list" @select="selectItem" />

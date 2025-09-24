@@ -15,7 +15,7 @@
       <uploader v-model="state.percent" class="upload" @done="uploadDone">
         <el-button class="upload-btn" plain><i class="iconfont icon-upload" /> 上传图片</el-button>
       </uploader>
-      <el-button disabled class="upload-btn upload-psd" plain type="primary" @click="openPSD">导入 PSD</el-button>
+      <!-- <el-button disabled class="upload-btn upload-psd" plain type="primary" @click="openPSD">导入 PSD</el-button> -->
       <div style="margin: 1rem; height: 100vh">
         <photo-list ref="imgListRef" :edit="state.editOptions.photo" :isDone="state.isDone" :listData="state.imgList" @load="load" @drag="dragStart" @select="selectImg" />
       </div>
