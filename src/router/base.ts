@@ -1,12 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
 
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-19 18:43:22
- * @Description: 前端路由
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-09-19 17:32:04
- */
 export default [
   // {
   //   path: '/',

@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-09 09:47:40
- * @Description: 处理剪贴板
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2025-03-22 13:09:08
- */
-
 // window.addEventListener('paste', (e: any) => {
 //   const clipdata = e.clipboardData || (window as any).clipboardData
 //   console.log('主动粘贴', clipdata.getData('text/plain'))

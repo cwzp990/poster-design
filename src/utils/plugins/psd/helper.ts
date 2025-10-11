@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-08-17 18:45:24
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-18 20:49:49
- */
 export function createBase64(src: any, { width, height }: any) {
   let result = ''
   if (src && width) {

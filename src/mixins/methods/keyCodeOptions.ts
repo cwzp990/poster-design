@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-03-09 14:20:09
- * @Description: 处理常用操作
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-19 15:55:22
- */
 import { useControlStore, useWidgetStore } from '@/store'
 import { TdWidgetData } from '@/store/design/widget'
 

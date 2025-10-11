@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-04 03:05:45
- * @Description: 漫游导航
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-05 05:31:01
--->
 <template>
   <el-tour v-model="isShow">
     <el-tour-step :target="steps[0]?.$el" title="文件管理">

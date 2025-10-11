@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-03-06 13:53:30
- * @Description: 获取图片在鼠标焦点的颜色
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-09-19 17:32:40
- */
 export default class PointImg {
   private canvas: HTMLCanvasElement | undefined
   private cvs: CanvasRenderingContext2D | null | undefined

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-03 19:15:21
- * @Description: 文件 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-10 07:16:00
--->
 <template>
   <el-dropdown trigger="click" size="large" placement="bottom-start">
     <span class="el-dropdown-link">

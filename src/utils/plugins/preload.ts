@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-12-24 15:13:58
- * @Description: 资源加载
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-05 12:00:00
- */
 export default class PreLoad {
   private i: number
   private arr: (string | HTMLImageElement | ChildNode[])[]

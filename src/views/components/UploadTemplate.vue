@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-07-12 11:26:53
- * @Description: 上传用户模板
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-17 10:51:11
--->
 <template>
   <el-button v-show="isDone" type="primary" plain @click="prepare"><b>上传模板</b></el-button>
   <!-- 生成图片组件 -->

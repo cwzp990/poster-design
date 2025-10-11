@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-07-14 11:43:13
- * @Description: 全局组件导入
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-08 18:23:15
- */
 import coms from '@/components/modules'
 import pageStyle from '@/components/modules/layout/designBoard/pageStyle.vue'
 import { App } from 'vue'

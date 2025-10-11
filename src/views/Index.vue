@@ -1,11 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-09-18 17:34:44
- * @Description: 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastUpdateContent: Support typescript
- * @LastEditTime: 2024-08-12 15:53:20
--->
 <template>
   <div id="page-design-index" ref="pageDesignIndex" class="page-design-bg-color">
     <div :style="state.style" class="top-nav">

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-07-13 02:48:38
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-13 18:19:28
- */
 import * as services from '../api/index'
 import * as utils from './utils'
 import _config from '@/config'

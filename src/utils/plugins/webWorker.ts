@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-03-06 13:53:30
- * @Description: 计算密集型任务
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-20 16:12:54
- */
 export default class WebWorker {
   private worker: Worker | undefined
 

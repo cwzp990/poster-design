@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-07-11 14:21:33
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-17 15:56:39
- */
 import Vue, { VNode } from 'vue'
 
 declare global {

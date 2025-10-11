@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-01-10 14:57:53
- * @Description: Psd文件解析
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2025-01-15 22:05:57
--->
 <template>
   <div id="page-design-index" ref="pageDesignIndex">
     <div class="top-nav">

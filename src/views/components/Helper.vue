@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-03 19:15:21
- * @Description: 文件 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-05 04:46:03
--->
 <template>
   <el-dropdown ref="dropdownRef" max-height="70vh" :hide-on-click="false" trigger="click" size="large" placement="bottom-start">
     <span class="el-dropdown-link">

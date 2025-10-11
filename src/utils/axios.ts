@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-07-13 02:48:38
- * @Description: 本地测试用户身份写死
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-03 20:56:23
- */
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from 'axios'
 import app_config, { LocalStorageKey } from '@/config'
 import { useBaseStore, useUserStore } from '@/store/index';

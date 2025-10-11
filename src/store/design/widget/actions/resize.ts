@@ -1,11 +1,3 @@
-/*
- * @Author: Jeremy Yu
- * @Date: 2024-03-18 21:00:00
- * @Description: Store方法export
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 17:25:42
- */
-
 import { useCanvasStore, useControlStore } from '@/store'
 import { TWidgetStore } from '..'
 import { updateGroupSize } from '.'

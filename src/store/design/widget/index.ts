@@ -1,11 +1,3 @@
-/*
- * @Author: Jeremy Yu
- * @Date: 2024-03-18 21:00:00
- * @Description: Store方法export
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-18 17:11:51
- */
-
 import { Store, defineStore } from "pinia";
 import { useCanvasStore } from '@/store'
 import { TInidDMovePayload, TMovePayload, dMove, initDMove, setDropOver, setMouseEvent, setdActiveElement, updateGroupSize, updateHoverUuid } from "./actions";

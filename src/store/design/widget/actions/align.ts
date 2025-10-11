@@ -1,11 +1,3 @@
-/*
- * @Author: Jeremy Yu
- * @Date: 2024-03-28 14:00:00
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:29:27
- */
-
 import { useCanvasStore, useHistoryStore } from "@/store"
 import { TWidgetStore, TdWidgetData } from ".."
 
