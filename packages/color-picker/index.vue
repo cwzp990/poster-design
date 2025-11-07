@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-05-26 17:42:26
- * @Description: 调色板
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-01-31 10:44:41
--->
 <template>
   <div class="color-picker">
     <Tabs v-if="modes.length > 1" :value="mode" @update:value="onChangeMode">

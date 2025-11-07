@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-05 16:33:07
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-08 11:10:05
- */
 import { DEFAULT_IMAGE_SMOOTH_CHOICE, INITIAL_GAP_SIZE } from '../constants'
 import { TransformConfig } from '../types/common'
 import { ComputeTransformConfigConfig, GenerateMaskSourceConfig, GetValidTransformParametersConfig, InitMattingConfig, InitMattingResult } from '../types/init-matting'

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-05 16:33:07
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-08 11:10:07
- */
 import { InitMattingDragConfig, InitMattingScaleConfig } from '../types/transform'
 import { redrawMattingBoardsWhileScaling, updateRangeByMovements } from './transform-helper'
 

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-05 16:33:07
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-08 11:10:19
- */
 import { DRAWING_STEP_BASE, DRAWING_STEP_BASE_BASE, MIN_RADIUS } from '../constants'
 import { RectSize, TransformConfig } from '../types/common'
 

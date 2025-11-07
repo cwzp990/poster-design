@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-05 16:33:07
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-08 11:09:59
- */
 import { HIDDEN_BOARD_GAP_SIZE, HIDDEN_BOARD_MAX_SIZE, INITIAL_SCALE_RATIO } from '../constants'
 import { BoardRect, GapSize, RectSize } from '../types/common'
 import { TransformParameters, TransformParametersConfig } from '../types/init-matting'

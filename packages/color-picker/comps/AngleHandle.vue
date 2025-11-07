@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-11-29 10:34:54
- * @Description: 角度手柄
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-11-29 19:24:14
--->
 <template>
   <div class="angle-input-box">
     <input ref="numInput" v-model="num" class="angle-input" @focus="visiable = true" @blur="visiable = false" @input="inputChange" />

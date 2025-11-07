@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-10-05 16:33:07
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-08 11:09:55
- */
 import { GLOBAL_COMPOSITE_OPERATION_DESTINATION_IN, GLOBAL_COMPOSITE_OPERATION_SOURCE_OVER } from '../constants'
 import { MattingDrawingConfig, RenderInterpolationConfig } from '../types/drawing'
 import { createContext2D, drawBrushPoint, transformedDrawImage } from './dom-helper'
