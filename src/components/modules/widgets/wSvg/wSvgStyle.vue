@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-09 11:41:53
- * @Description: 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:26:17
--->
 <template>
   <div id="w-image-style">
     <el-collapse v-model="state.activeNames">

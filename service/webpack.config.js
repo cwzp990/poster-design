@@ -1,16 +1,9 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-12-27 10:15:07
- * @Description:  
- * @LastEditors: ShawnPhang
- * @LastEditTime: 2021-12-27 11:22:29
- */
 'use strict'
 
 const path = require('path')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const nodeExternals = require('webpack-node-externals');
-const buildPlugin = require('./webpack.plugin.js');
+const nodeExternals = require('webpack-node-externals')
+const buildPlugin = require('./webpack.plugin.js')
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -40,11 +33,11 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],  // 解析的文件类型
+    extensions: ['.ts', '.tsx', '.js', '.json'], // 解析的文件类型
     alias: {
-      '@': path.resolve(__dirname, 'src')  // 配置路径别名，指向 src 目录
-    }
+      '@': path.resolve(__dirname, 'src'), // 配置路径别名，指向 src 目录
+    },
   },
   // plugins: [new BundleAnalyzerPlugin()],
-  plugins: [ new buildPlugin() ]
+  plugins: [new buildPlugin()],
 }

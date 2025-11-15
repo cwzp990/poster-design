@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2020-07-22 20:13:14
- * @Description: 接口名称
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 13:39:59
- */
 let path = '/api'
 
 export default {

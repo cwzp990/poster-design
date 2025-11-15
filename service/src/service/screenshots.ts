@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2020-07-22 20:13:14
- * @Description: 服务端截图
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-17 11:23:58
- */
 import { saveScreenshot } from '../utils/download-single'
 import uuid from '../utils/uuid'
 import { filePath, upperLimit, drawLink } from '../configs'

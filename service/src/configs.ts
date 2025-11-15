@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-01 13:41:59
- * @Description: 配置文件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 05:13:19
- */
 const isDev = process.env.NODE_ENV === 'development'
 
 // 服务器常用修改项

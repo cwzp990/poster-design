@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-01 13:41:59
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-11-14 17:36:17
- */
-
 import express from 'express'
 import bodyParser from 'body-parser'
 import fs from 'fs'
