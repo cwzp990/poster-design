@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-02-13 22:18:35
- * @Description: 我的
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:32:00
--->
 <template>
   <div class="wrap">
     <el-tabs v-model="state.tabActiveName" :stretch="true" class="tabs" @tab-change="tabChange">

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-07-29 18:31:27
- * @Description: 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-11-14 16:48:06
--->
 <template>
   <div class="icon-item-select">
     <span v-if="label" class="label">{{ label }}</span>

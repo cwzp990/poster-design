@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-02-11 18:48:23
- * @Description: 组件列表
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-13 18:48:25
--->
 <template>
   <div class="wrap">
     <div class="header">组件</div>

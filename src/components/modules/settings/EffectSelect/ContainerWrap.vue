@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-09 14:00:23
- * @Description: 图片容器
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:48:42
--->
 <template>
   <el-card class="box-card" shadow="hover" :body-style="{ padding: state.effectSelect ? '20px' : 0 }">
     <template #header>

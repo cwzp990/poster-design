@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-01-27 11:05:48
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <div class="search__wrap">
     <el-dropdown v-if="type !== 'none'" placement="bottom-start">

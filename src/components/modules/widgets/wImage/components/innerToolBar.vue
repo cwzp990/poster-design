@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-09-27 15:08:54
- * @Description:  
- * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-09-27 15:52:07
--->
 <template>
   <div class="inner-tool-bar">
     <slot />

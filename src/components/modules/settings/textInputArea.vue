@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-19 18:43:22
- * @Description:  
- * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-04-07 14:29:35
--->
 <template>
   <div id="text-input-area">
     <p v-if="label" class="input-label">{{ label }}</p>

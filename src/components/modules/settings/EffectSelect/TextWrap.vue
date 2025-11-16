@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-09 14:00:23
- * @Description: 文字特效选择框组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-03-11 01:43:21
--->
 <template>
   <el-card class="box-card" shadow="hover" :body-style="{ padding: '20px' }">
     <template #header>

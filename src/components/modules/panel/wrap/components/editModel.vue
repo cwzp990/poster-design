@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-01-11 17:54:14
- * @Description: 模板编辑组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-02-11 00:07:36
--->
 <template>
   <div class="wrap">
     <slot />

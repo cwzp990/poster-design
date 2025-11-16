@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-10-04 19:12:40
- * @Description: 图片描述ToolTip
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <el-tooltip :disabled="!detail.author" :offset="1" effect="light" placement="bottom-start" :hide-after="0" :enterable="false" raw-content>
     <template #content>

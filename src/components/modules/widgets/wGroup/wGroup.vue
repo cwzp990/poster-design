@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-02 09:41:41
- * @Description: 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-11-12 13:47:21
--->
 <template>
   <div
     ref="widget"

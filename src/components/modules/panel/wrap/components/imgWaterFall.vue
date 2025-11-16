@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-12-16 16:20:16
- * @Description: 瀑布流组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <div ref="imgWaterFall" :style="{ height: state.countHeight + 'px' }" class="img-water-fall">
     <!-- backgroundImage: `url(${item.cover})` -->

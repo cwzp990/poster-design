@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-09 11:21:37
- * @Description: 组合设置
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:25:37
--->
 <template>
   <div id="w-group-style">
     <el-collapse v-model="state.activeNames">

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-10-04 02:04:04
- * @Description: 列表分类头部
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <div v-if="!isBack" class="content__wrap">
     <div v-for="(t, ti) in types" :key="ti + 't'">

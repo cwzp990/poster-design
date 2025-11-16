@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-02 09:41:41
- * @Description: 静态组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 16:13:56
--->
 <template>
   <div
     :style="{

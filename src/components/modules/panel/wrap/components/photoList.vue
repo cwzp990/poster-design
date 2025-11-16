@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-02-23 15:48:52
- * @Description: 图片列表组件 Bookshelf Layout 
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <ul ref="listRef" class="img-list-wrap" :style="{ paddingBottom: props.isShort ? '15px' : '200px' }" @scroll="scrollEvent($event)">
     <div class="list">
