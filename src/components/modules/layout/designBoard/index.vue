@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-10 23:02:46
- * @Description: 主画布
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-12-28 14:12:33
--->
 <template>
   <div id="main">
     <div id="page-design" ref="page_design" :style="{ paddingTop: dPaddingTop + 'px', minWidth:  (dPage.width * dZoom) / 100 + (padding ?? dPresetPadding) * 2 + 'px' }">

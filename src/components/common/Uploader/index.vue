@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-29 18:17:13
- * @Description: 二次封装上传组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-05 10:50:00
--->
 <template>
   <el-upload action="" accept="image/*" :http-request="upload" :show-file-list="false" multiple>
     <slot>

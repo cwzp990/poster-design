@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-27 15:16:07
- * @Description: 素材列表，主要用于文字组合列表
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-14 18:49:06
--->
 <template>
   <div class="wrap">
     <!-- <div class="search__wrap">

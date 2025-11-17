@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-02-11 18:48:23
- * @Description: 照片图库 Form:Unsplash无版权图片
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-14 18:50:09
--->
 <template>
   <div class="wrap">
     <search-header type="none" @change="searchChange" />

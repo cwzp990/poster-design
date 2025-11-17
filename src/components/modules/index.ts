@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-07-13 22:51:29
- * @Description: Widgets、panel中所有组件将会自动全局引入
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-09 22:31:08
- */
 import { App } from "vue"
 
 function capitalizeFirstLetter(string: string) {

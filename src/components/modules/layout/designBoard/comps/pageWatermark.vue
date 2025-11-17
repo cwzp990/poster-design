@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-08 19:19:17
- * @Description: 水印组件封装
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-08 21:30:12
--->
 <template>
   <slot v-if="isDrawPage" />
   <el-watermark v-else :style="props.customStyle" :gap="[140, 120]" :content="watermark">

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-03-17 16:10:21
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-11 18:42:09
--->
 <template>
   <div v-if="percent" v-show="!hide" class="mask">
     <div class="content">

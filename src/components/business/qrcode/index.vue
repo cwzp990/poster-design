@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-03-16 09:15:52
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-04 18:50:00
--->
 <template>
   <div ref="qrCodeDom" class="qrcode__wrap"></div>
 </template>

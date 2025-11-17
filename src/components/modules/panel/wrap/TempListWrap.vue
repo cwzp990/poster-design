@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-27 15:16:07
- * @Description: 模板列表
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-06 21:16:00
--->
 <template>
   <div class="wrap">
     <search-header v-model="state.searchKeyword" @change="cateChange" />

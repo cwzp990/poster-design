@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-01 11:12:17
- * @Description: 前端出图 - 用于封面
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-04 18:50:00
--->
 <template>
   <div id="cover-wrap"></div>
 </template>

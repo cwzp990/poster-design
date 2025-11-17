@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-06-20 15:01:39
- * @Description: 缩放画板
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2025-03-24 14:47:12
--->
 <template>
   <div id="zoom-control">
     <ul v-show="show" class="zoom-selecter">

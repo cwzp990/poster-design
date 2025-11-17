@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-07-30 17:38:50
- * @Description:
- * @LastEditors: ShawnPhang, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @Date: 2024-03-04 18:50:00
- */
-
 export type TMenuItemData = {
   left: number
   top: number

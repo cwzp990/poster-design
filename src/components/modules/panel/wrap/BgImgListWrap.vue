@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-27 15:16:07
- * @Description: 背景图
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 09:49:35
--->
 <template>
   <div class="wrap">
     <div class="color__box" :style="modelStyle.color">

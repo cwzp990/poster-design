@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-06 15:17:03
- * @Description: 画布尺寸操作柄
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-08 12:28:15
--->
 <template>
   <div v-show="show" class="page-resize" :style="{ width: Math.floor(pw) + 'px', height: Math.floor(ph) + 'px' }">
     <div @mousedown="handlemousedown($event, 'ns', true)" class="resize__bar resize__bar-top"></div>
