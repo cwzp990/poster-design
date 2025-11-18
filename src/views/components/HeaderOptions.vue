@@ -1,5 +1,5 @@
 <template>
-  <div class="top-title"><el-input v-model="state.title" placeholder="未命名的设计" class="input-wrap" /></div>
+  <!-- <div class="top-title"><el-input v-model="state.title" placeholder="未命名的设计" class="input-wrap" /></div> -->
   <div class="top-icon-wrap">
     <template v-if="tempEditing">
       <!-- <span style="color: #999; font-size: 14px; margin-right: 0.5rem">{{ state.stateBollean ? '启用' : '停用' }}</span> <el-switch v-model="state.stateBollean" @change="stateChange" />
@@ -9,8 +9,8 @@
       <!-- <el-button @click="$store.commit('managerEdit', false)">取消</el-button> -->
       <div class="divide__line">|</div>
     </template>
-    <el-button v-else style="margin-right: 1rem" @click="jump2Edit">修改模板</el-button>
-    <watermark-option style="margin-right: 0.5rem" />
+    <!-- <el-button v-else style="margin-right: 1rem" @click="jump2Edit">修改模板</el-button> -->
+    <!-- <watermark-option style="margin-right: 0.5rem" /> -->
     <!-- <copyRight> -->
     <slot />
     <!-- <el-button :loading="state.loading" size="large" class="primary-btn" :disabled="tempEditing" plain type="primary" @click="download">下载作品</el-button> -->
@@ -145,7 +145,7 @@ async function download() {
     // 无特殊条件命中则直接从前端出图
     const { blob } = await canvasImage.value?.createPoster()
     downloadBlob(blob, fileName)
-    emit('change', { downloadPercent: 100, downloadText: '作品下载成功' })
+    emit('change', { downloadPercent: 100, downloadText: '导出成功' })
     state.loading = false
   }
   await save(true)
@@ -183,7 +183,7 @@ async function download() {
       },
       fileName,
     )
-    emit('change', { downloadPercent: 100, downloadText: '作品下载成功', downloadMsg: '' })
+    emit('change', { downloadPercent: 100, downloadText: '导出成功', downloadMsg: '' })
     state.loading = false
   }
 }
@@ -278,8 +278,9 @@ defineExpose({
 .top-icon-wrap {
   display: flex;
   align-items: center;
-  padding-right: 20px;
+  margin-left: auto;
   height: 54px;
+
   .top-icon {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 5px;
@@ -288,35 +289,42 @@ defineExpose({
     font-weight: bold;
     margin: 8px;
     padding: 5px 8px;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.5);
     }
   }
 }
+
 .top-title {
   color: @color-black;
   flex: 1;
   padding-left: 20px;
+
   // font-weight: bold;
   .input-wrap {
     // box-shadow: none;
     width: 15rem;
+
     :deep(input) {
       border-color: #ffffff;
       // border-color: #e8eaec;
     }
   }
+
   .input-wrap:hover {
     :deep(input) {
       // border-color: #e8eaec;
     }
   }
 }
+
 .primary-btn {
   font-weight: 600;
   transform: scale(0.95);
   margin-left: 10px;
 }
+
 .divide__line {
   margin: 0 1rem;
   color: #e8eaec;

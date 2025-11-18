@@ -5,8 +5,10 @@
         <div class="top-left">
           <!-- <div class="name" @click="jump2home">{{ state.APP_NAME }}</div> -->
           <div class="operation">
-            <div :class="['operation-item', { disable: !undoable }]" @click="undoable ? handleHistory('undo') : ''"><i class="iconfont icon-undo" /></div>
-            <div :class="['operation-item', { disable: !redoable }]" @click="redoable ? handleHistory('redo') : ''"><i class="iconfont icon-redo" /></div>
+            <div :class="['operation-item', { disable: !undoable }]" @click="undoable ? handleHistory('undo') : ''"><i
+                class="iconfont icon-undo" /></div>
+            <div :class="['operation-item', { disable: !redoable }]" @click="redoable ? handleHistory('redo') : ''"><i
+                class="iconfont icon-redo" /></div>
           </div>
           <!-- <el-divider direction="vertical" />
           <Folder @select="dealWith" ref="ref1">
@@ -20,21 +22,28 @@
           </el-tooltip>
           <el-divider direction="vertical" /> -->
         </div>
-        <!-- <HeaderOptions ref="optionsRef" v-model="state.isContinue" @change="optionsChange">
+        <HeaderOptions ref="optionsRef" v-model="state.isContinue" @change="optionsChange">
           <el-button size="large" class="primary-btn" @click="dealWith('save')">{{ $t('header.save') }}</el-button>
-          <el-button ref="ref4" size="large" class="primary-btn" type="primary" @click="dealWith('download')">{{ $t('header.download') }}</el-button>
-        </HeaderOptions> -->
+          <el-button ref="ref4" size="large" class="primary-btn" type="primary" @click="dealWith('download')">{{
+            $t('header.download') }}</el-button>
+        </HeaderOptions>
       </div>
     </div>
     <div class="page-design-index-wrap">
       <widget-panel ref="ref2"></widget-panel>
       <design-board class="page-design-wrap" pageDesignCanvasId="page-design-canvas">
         <!-- 用于挡住画布溢出部分，因为使用overflow有bug -->
-        <div class="shelter" :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }"></div>
+        <div class="shelter"
+          :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }">
+        </div>
         <!-- 提供一个背景图层 -->
-        <div class="shelter-bg transparent-bg" :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }"></div>
+        <div class="shelter-bg transparent-bg"
+          :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }">
+        </div>
         <!-- 多画板操作组件 -->
-        <template #bottom> <multipleBoards /> </template>
+        <template #bottom>
+          <multipleBoards />
+        </template>
       </design-board>
       <style-panel ref="ref3"></style-panel>
     </div>
@@ -47,7 +56,8 @@
     <!-- 旋转缩放组件 -->
     <Moveable />
     <!-- 遮罩百分比进度条 -->
-    <ProgressLoading :percent="state.downloadPercent" :text="state.downloadText" :msg="state.downloadMsg" cancelText="取消" @cancel="downloadCancel" @done="state.downloadPercent = 0" />
+    <ProgressLoading :percent="state.downloadPercent" :text="state.downloadText" :msg="state.downloadMsg"
+      cancelText="取消" @cancel="downloadCancel" @done="state.downloadPercent = 0" />
     <!-- 漫游导航 -->
     <Tour ref="tourRef" :steps="[ref1, ref2, ref3, ref4]" />
     <!-- 创建设计 -->
@@ -123,7 +133,7 @@ const createDesignRef: Ref<typeof createDesign | null> = ref(null)
 const beforeUnload = function (e: Event): any {
   if (dHistoryStack.value.changes.length > 0) {
     const confirmationMessage: string = '系统不会自动保存您未修改的内容'
-    ;(e || window.event).returnValue = confirmationMessage as any // Gecko and Trident
+      ; (e || window.event).returnValue = confirmationMessage as any // Gecko and Trident
     return confirmationMessage // Gecko and WebKit
   } else return false
 }
