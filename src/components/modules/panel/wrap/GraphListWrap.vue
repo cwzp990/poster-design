@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang <https://m.palxp.cn>
- * @Date: 2021-08-27 15:16:07
- * @Description: 素材列表
- * @LastEditors: Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-09-25 00:39:00
--->
 <template>
   <div class="wrap">
     <search-header v-model="state.searchKeyword" type="none" @change="searchChange" />

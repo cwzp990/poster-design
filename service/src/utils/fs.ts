@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-05-28 17:10:51
- * @Description: 文件操作相关方法
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 06:29:58
- */
 import fs from 'fs'
 import path from 'path'
 import imageSize from 'image-size'

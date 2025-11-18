@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-04-05 07:31:45
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 05:30:15
- */
 // const prefix = import.meta.env
 const prefix = process.env
 

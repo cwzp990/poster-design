@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-09-30 14:47:22
- * @Description: 下载图片（单浏览器版，适用于低配置服务器）
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-16 10:56:35
- */
 const isDev = process.env.NODE_ENV === 'development'
 const puppeteer = require('puppeteer')
 const images = require('images')

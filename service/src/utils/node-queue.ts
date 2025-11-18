@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-12-24 18:09:35
- * @Description: 异步队列
- * @LastEditors: ShawnPhang <site: m.palxp.cn>
- * @LastEditTime: 2023-07-06 10:19:40
- */
 interface Queue {
   Fn: Function
   sign?: string | number

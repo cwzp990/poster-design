@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-01-25 17:02:02
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 13:59:34
- */
 import axios from 'axios'
 
 const httpRequest = axios.create({

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2020-07-22 20:13:14
- * @Description: 路由
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 13:40:13
- */
 import rExpress from 'express'
 import screenshots from '../service/screenshots'
 import fileService from '../service/files'

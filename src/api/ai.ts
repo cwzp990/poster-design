@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-27 14:42:15
- * @Description: AI相关接口
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @Date: 2024-03-03 19:00:00
- */
 import fetch from '@/utils/axios'
 
 export type TCommonUploadCb = (up: number, dp: number) => void

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-05-11 02:26:55
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 13:48:40
- */
 import fs from 'fs'
 import path from 'path'
 import { filesReader, copyFile, readFile } from './fs'

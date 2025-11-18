@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-07-13 17:01:37
- * @Description: github api
- * @LastEditors: ShawnPhang <site: book.palxp.com>
- * @LastEditTime: 2023-08-10 10:33:59
- */
 import fetch from '@/utils/axios'
 const cutToken = 'ghp_qpV8PUxwY7as4jc'
 

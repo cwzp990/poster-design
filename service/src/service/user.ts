@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-05-16 18:25:10
- * @Description: 示例代码，仅供参考
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 06:25:23
- */
 import { Request, Response } from 'express'
 const multiparty = require('multiparty')
 const { filePath } = require('../configs.ts')

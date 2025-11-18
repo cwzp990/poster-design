@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-01-12 11:26:53
- * @Description: 顶部操作按钮组
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-17 09:49:01
--->
 <template>
   <div class="top-title"><el-input v-model="state.title" placeholder="未命名的设计" class="input-wrap" /></div>
   <div class="top-icon-wrap">

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-26 12:47:40
- * @Description: 相册 api 接口
- * @LastEditors: ShawnPhang
- * @LastEditTime: 2021-08-30 10:45:49
- */
 import fetch from '@/utils/axios'
 import _config from '@/config'
 const prefix = _config.API_URL + '/'
