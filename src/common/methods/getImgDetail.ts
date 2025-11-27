@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-23 17:25:35
- * @Description: 获取图片细节的相关方法
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2023-10-09 10:42:54
- */
 export const getImage = (imgItem: string | File): Promise<HTMLImageElement> => {
   // 创建对象
   const img = new Image()

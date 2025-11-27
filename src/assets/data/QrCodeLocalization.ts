@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-03-16 11:38:48
- * @Description:
- * @LastEditors: ShawnPhang, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-01 20:55:51
- */
-
 export type QrCodeLocalizationData = {
   dotColorTypes: {
     key: string

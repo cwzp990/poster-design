@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-12 11:08:57
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-01 20:55:51
- */
-
 export type AlignListData = {
   key: string
   icon: string

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-19 18:43:22
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 15:37:54
- */
 import fetch from '@/utils/axios'
 import _config from '@/config'
 

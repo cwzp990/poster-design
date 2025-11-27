@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-29 20:35:31
- * @Description: 七牛上传方法
- * @LastEditors: ShawnPhang <site: book.palxp.com>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-02 11:50:00
- */
 import dayjs from 'dayjs'
 import api from '@/api/album'
 

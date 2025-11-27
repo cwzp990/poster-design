@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-02 18:27:27
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-11-14 16:41:19
- */
-
 import { AlignListData } from "./AlignListData"
 
 export type TStyleIconData = {
