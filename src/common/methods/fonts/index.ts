@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-01-08 09:43:37
- * @Description: 字体处理
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 10:33:36
- */
 // import { isSupportFontFamily, blob2Base64 } from './utils'
 import { TGetFontItemData, getFonts } from '@/api/material'
 

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-08 21:33:59
- * @Description: 尺寸编辑
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-09 15:55:33
--->
 <template>
   <div class="position-size">
     <number-input v-model="params.width" label="宽" :maxValue="5000" />
@@ -82,18 +75,22 @@ function isNumber(val: any) {
   align-items: center;
   // justify-content: space-between;
   width: 100%;
+
   .number-input {
     flex: 0.2;
   }
+
   .icon {
     cursor: pointer;
     font-size: 19px;
   }
+
   .sd-fdb,
   .sd-db {
     color: #999999;
     margin: 0 6px 0 -4px;
   }
+
   .sd-db {
     color: #333333;
   }

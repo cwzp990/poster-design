@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-22 15:06:14
- * @Description: 设置图片类型元素
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-01 20:55:51
- */
 // import store from '@/store'
 import { getImage } from '../getImgDetail'
 import { useCanvasStore } from '@/store'

@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-09-30 15:52:59
- * @Description: 下载远程图片
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-08-12 17:01:59
- */
-
 type TCallBack = (progress: number, xhr: XMLHttpRequest) => void
 
 export default (src: string, cb: TCallBack, fileName?: string) => {

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-04-15 11:16:20
- * @Description:
- * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-04-15 11:22:49
- */
 /**
  * 显示全局提示
  * @param content

@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-09-28 20:06:25
- * @Description: 裁剪组件
- * @LastEditors: ShawnPhang <site: book.palxp.com>
- * @LastEditTime: 2023-06-29 17:58:00
--->
 <template>
   <el-dialog v-model="dialogVisible" title="裁剪图片" width="80%" :before-close="handleClose" @close="cancel">
     <div id="wrap" v-loading="loading" style="height: 50vh">
@@ -68,7 +61,7 @@ export default defineComponent({
         //   console.log(event);
         // },
       })
-      imgBox.value.addEventListener('ready', function() {
+      imgBox.value.addEventListener('ready', function () {
         state.loading = false
         if (this.cropper === cropper) {
           cropData && cropper.setData(cropData)
@@ -85,7 +78,7 @@ export default defineComponent({
         cancel()
       }, 100)
     }
-    
+
     const cancel = () => {
       // store.commit('setShowMoveable', true)
       controlStore.setShowMoveable(true)

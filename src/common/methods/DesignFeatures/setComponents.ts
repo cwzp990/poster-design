@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-22 15:06:14
- * @Description: 设置图片类型元素
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-02 11:50:00
- */
 import { useCanvasStore } from '@/store'
 import { TdWidgetData } from '@/store/design/widget'
 // import store from '@/store'

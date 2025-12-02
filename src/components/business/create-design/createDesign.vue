@@ -1,13 +1,7 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-04-09 11:24:57
- * @Description: 创建/编辑画布尺寸
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 17:11:59
--->
 <template>
   <div>
-    <el-dialog v-model="dialogVisible" center destroy-on-close :align-center="false" :title="params ? '编辑尺寸' : '新建空白设计'" width="380" draggable>
+    <el-dialog v-model="dialogVisible" center destroy-on-close :align-center="false" :title="params ? '编辑尺寸' : '新建空白设计'"
+      width="380" draggable>
       <!-- <el-divider content-position="left">自定义尺寸</el-divider> -->
       <el-checkbox v-if="params" v-model="isAdaptive" label="自动调整元素大小位置" size="large" />
       <sizeEditor :params="page" :class="params ? 'editor-mode' : 'add-mode'">
@@ -82,31 +76,38 @@ defineExpose({
 :deep(.el-dialog__header) {
   padding-bottom: 7px !important;
 }
+
 .editor-mode {
   padding: 0 0 0.5rem 0;
 }
+
 .add-mode {
   padding: 1rem 0 0.5rem 0;
 }
+
 .pre-list {
   margin: 1rem 0;
   height: 245px;
   overflow-y: scroll;
+
   .item {
     padding: 10px 8px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
     color: #333;
+
     .icon {
       margin-right: 0.2rem;
     }
+
     .info {
       margin-left: 0.4rem;
       font-size: 12px;
       color: #b4b8bf;
     }
   }
+
   .item:hover {
     background-color: #f6f7f9;
   }

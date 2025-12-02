@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-03-02 13:32:00
- * @Description: 裁剪组件
- * @LastEditors: ShawnPhang <site: book.palxp.com>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @LastEditTime: 2024-03-02 13:32:00
--->
 <template>
   <el-dialog v-model="dialogVisible" title="裁剪图片" width="80%" :before-close="handleClose" @close="cancel">
     <div id="wrap" v-loading="state.loading" style="height: 50vh">
@@ -82,7 +75,7 @@ const setEdit = () => {
     //   console.log(event);
     // },
   })
-  imgBox.value.addEventListener('ready', function() {
+  imgBox.value.addEventListener('ready', function () {
     state.loading = false
     // if (this.cropper === cropper) {
     cropData && cropper.setData(cropData)

@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-02-22 15:06:14
- * @Description: 设置元素时根据类型处理
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-03-22 16:00:17
- */
 // import store from '@/store'
 // import { getImage } from '../getImgDetail'
 import setImageData from '@/common/methods/DesignFeatures/setImage'
