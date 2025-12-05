@@ -1,13 +1,7 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2024-03-03 19:00:00
- * @Description: 裁剪组件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @Date: 2024-03-03 19:00:00
--->
 <template>
   <el-dialog v-model="state.show" title="AI 抠图（模拟演示）" align-center width="650" @close="handleClose">
-    <uploader v-if="!state.rawImage" :hold="true" :drag="true" :multiple="true" class="uploader" @load="handleUploaderLoad">
+    <uploader v-if="!state.rawImage" :hold="true" :drag="true" :multiple="true" class="uploader"
+      @load="handleUploaderLoad">
       <div class="uploader__box">
         <upload-filled style="width: 64px; height: 64px" />
         <!-- <div class="el-upload__text">在此拖入或选择<em>上传图片</em></div> -->
@@ -21,7 +15,8 @@
       </el-button>
     </el-progress>
     <div class="content">
-      <div v-show="state.rawImage" v-loading="!state.cutImage" :style="{ width: state.offsetWidth ? state.offsetWidth + 'px' : '100%' }" class="scan-effect transparent-bg">
+      <div v-show="state.rawImage" v-loading="!state.cutImage"
+        :style="{ width: state.offsetWidth ? state.offsetWidth + 'px' : '100%' }" class="scan-effect transparent-bg">
         <img ref="raw" :style="{ 'clip-path': 'inset(0 0 0 ' + state.percent + '%)' }" :src="state.rawImage" alt="" />
         <img v-show="state.cutImage" :src="state.cutImage" alt="结果图像" @mousemove="mousemove" />
         <div v-show="state.cutImage" :style="{ left: state.percent + '%' }" class="scan-line"></div>
@@ -33,7 +28,8 @@
         <el-button v-show="state.cutImage && state.toolModel" @click="clear">清除重选</el-button>
         <el-button v-show="state.cutImage" type="primary" plain @click="edit">进入编辑模式</el-button>
         <el-button v-show="state.cutImage && state.toolModel" type="primary" @click="download"> 下载 </el-button>
-        <el-button v-show="state.cutImage && !state.toolModel" v-loading="state.loading" type="primary" @click="cutDone"> {{ state.loading ? '上传中..' : '完成抠图' }} </el-button>
+        <el-button v-show="state.cutImage && !state.toolModel" v-loading="state.loading" type="primary"
+          @click="cutDone"> {{ state.loading ? '上传中..' : '完成抠图' }} </el-button>
       </span>
     </template>
     <ImageExtraction ref="matting" />
@@ -51,15 +47,15 @@ import { selectImageFile, uploadCutPhotoToCloud } from './method'
 import { useControlStore } from '@/store'
 
 export type TImageCutoutState = {
-    show: boolean;
-    rawImage: string;
-    cutImage: string;
-    offsetWidth: number;
-    percent: number;
-    progress: number;
-    progressText: string;
-    toolModel: boolean;
-    loading: boolean;
+  show: boolean;
+  rawImage: string;
+  cutImage: string;
+  offsetWidth: number;
+  percent: number;
+  progress: number;
+  progressText: string;
+  toolModel: boolean;
+  loading: boolean;
 }
 
 const controlStore = useControlStore()
@@ -168,15 +164,18 @@ const edit = () => {
     flex-direction: column;
   }
 }
+
 .content {
   position: relative;
   display: flex;
   justify-content: center;
 }
+
 .scan-effect {
   position: relative;
   height: 50vh;
   overflow: hidden;
+
   img {
     // width: 100%;
     height: 100%;
@@ -199,5 +198,3 @@ const edit = () => {
   width: 100%;
 }
 </style>
-
-

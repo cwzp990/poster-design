@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2023-10-08 14:15:17
- * @Description: 手动抠图 - 修补擦除
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @Date: 2024-03-04 09:50:00
--->
 <template>
   <div>
     <el-dialog v-model="state.show" align-center width="90%" @close="state.showMatting = false">
@@ -15,20 +8,12 @@
             <el-radio :value="false" size="large"> <b>修补画笔</b> <i class="icon sd-xiubu" /></el-radio>
             <el-radio :value="true" size="large"> <b>擦除画笔</b> <i class="icon sd-cachu" /></el-radio>
           </el-radio-group>
-          <number-slider
-            v-model="state.radius" class="slider-wrap"
-            label="画笔尺寸" :showInput="false"
-            labelWidth="90px" 
-            :maxValue="state.constants?.RADIUS_SLIDER_MAX" :minValue="state.constants?.RADIUS_SLIDER_MIN" 
-            :step="state.constants?.RADIUS_SLIDER_STEP"
-          />
-          <number-slider
-            v-model="state.hardness" class="slider-wrap"
-            label="画笔硬度" :showInput="false"
-            labelWidth="90px" 
+          <number-slider v-model="state.radius" class="slider-wrap" label="画笔尺寸" :showInput="false" labelWidth="90px"
+            :maxValue="state.constants?.RADIUS_SLIDER_MAX" :minValue="state.constants?.RADIUS_SLIDER_MIN"
+            :step="state.constants?.RADIUS_SLIDER_STEP" />
+          <number-slider v-model="state.hardness" class="slider-wrap" label="画笔硬度" :showInput="false" labelWidth="90px"
             :maxValue="state.constants?.HARDNESS_SLIDER_MAX" :minValue="state.constants?.HARDNESS_SLIDER_MIN"
-            :step="state.constants?.HARDNESS_SLIDER_STEP"
-          />
+            :step="state.constants?.HARDNESS_SLIDER_STEP" />
         </div>
       </template>
       <matting v-if="state.showMatting" :hasHeader="false" @register="mattingStart" />
@@ -116,14 +101,17 @@ const done = () => {
 :deep(.el-dialog__body) {
   padding: 0 !important;
 }
+
 :deep(.el-dialog__header) {
   padding: 10px 35px;
   // var(--el-dialog-padding-primary)
 }
+
 .tool-wrap {
   display: flex;
   align-items: center;
 }
+
 // .tool-left {
 //   display: inline-flex;
 //   flex: 1;
@@ -133,4 +121,3 @@ const done = () => {
   width: 240px;
 }
 </style>
-

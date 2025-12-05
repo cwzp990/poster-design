@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-04-08 10:31:34
- * @Description: 标尺
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-10 23:07:44
--->
 <template>
   <div></div>
 </template>
@@ -131,12 +124,14 @@ function changeScroll() {
   position: absolute !important;
   z-index: 99;
 }
+
 .my-horizontal {
   left: 0px;
   top: 0;
   width: calc(100% - 30px);
   height: 30px !important;
 }
+
 .my-vertical {
   top: 30px;
   left: 0px;

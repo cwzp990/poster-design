@@ -1,21 +1,16 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2022-10-08 10:07:19
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>, Jeremy Yu <https://github.com/JeremyYu-cn>
- * @Date: 2024-03-04 18:10:00
--->
 <template>
   <el-dialog v-model="state.dialogVisible" title="选择图片" @close="close">
     <el-tabs tab-position="left" style="height: 60vh" class="demo-tabs" @tab-change="tabChange">
       <el-tab-pane label="我的素材">
         <div class="pic__box">
-          <photo-list :canDrag="false" :isDone="state.isDone" :listData="state.imgList" @load="load" @select="selectImg" />
+          <photo-list :canDrag="false" :isDone="state.isDone" :listData="state.imgList" @load="load"
+            @select="selectImg" />
         </div>
       </el-tab-pane>
       <el-tab-pane label="照片图库">
         <div class="pic__box">
-          <photo-list :canDrag="false" :isDone="state.isPicsDone" :listData="state.recommendImgList" @load="loadPic" @select="selectImg($event, state.recommendImgList)" />
+          <photo-list :canDrag="false" :isDone="state.isPicsDone" :listData="state.recommendImgList" @load="loadPic"
+            @select="selectImg($event, state.recommendImgList)" />
         </div>
       </el-tab-pane>
     </el-tabs>

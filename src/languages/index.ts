@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-05-19 04:14:02
- * @Description: i18n 示例
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-05-19 05:19:57
- */
 import { createI18n } from 'vue-i18n'
 
 import zh from './modules/zh'

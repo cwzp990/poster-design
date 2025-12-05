@@ -1,10 +1,3 @@
-<!--
- * @Author: ShawnPhang
- * @Date: 2021-08-04 11:46:39
- * @Description: 原版movable插件
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2025-01-10 03:38:49
--->
 <template>
   <div id="empty" class="moveable__remove-item zk-moveable-style"></div>
 </template>
@@ -93,10 +86,10 @@ watch(
   (val) => {
     if (!moveable) return
     if (val) {
-        moveable.target = _target
-      } else {
-        moveable.target = `[id="empty"]`
-      }
+      moveable.target = _target
+    } else {
+      moveable.target = `[id="empty"]`
+    }
   }
 )
 
@@ -186,7 +179,7 @@ watch(
 
 type TMoveableOptions = {
   target: HTMLElement | null
-  container?:  HTMLElement | null
+  container?: HTMLElement | null
   zoom: number
   draggable: boolean
   clippable: boolean // 裁剪
@@ -299,329 +292,329 @@ onMounted(() => {
   let resizeStartWidth = 0
 
   moveable
-  .on('dragStart', ({ inputEvent, target, stop }) => {
-    if (!dActiveElement.value) return
-    if (inputEvent.target.nodeName === 'PRE') {
-      dActiveElement.value.editable && stop()
-    }
-    dActiveElement.value.lock && stop()
-  })
-  .on('drag', ({ target, transform, left, top, inputEvent }) => {
-    // target!.style.transform = transform]
-    target!.style.left = `${left}px`
-    target!.style.top = `${top}px`
-    holdPosition = { left, top }
-  })
-  .on('dragEnd', ({ target, isDrag, inputEvent }) => {
-    // console.log('onDragEnd', inputEvent)
-    // TODO 清理mouseevent
-    widgetStore.setMouseEvent(null)
-    // store.commit('setMouseEvent', null)
-
-    inputEvent.stopPropagation()
-    inputEvent.preventDefault()
-    // console.log(this.holdPosition, inputEvent.pageX, inputEvent.pageY)
-    if (holdPosition) {
-      widgetStore.updateWidgetData({
-        uuid: dActiveElement.value?.uuid || "",
-        key: 'left',
-        value: Number(holdPosition?.left),
-      })
-      // store.dispatch("updateWidgetData", {
-      //   uuid: dActiveElement.value.uuid,
-      //   key: 'left',
-      //   value: Number(holdPosition?.left),
-      // })
-
-      widgetStore.updateWidgetData({
-        uuid: dActiveElement.value?.uuid || "",
-        key: 'top',
-        value: Number(holdPosition?.top),
-      })
-      // store.dispatch("updateWidgetData", {
-      //   uuid: dActiveElement.value.uuid,
-      //   key: 'top',
-      //   value: Number(holdPosition?.top),
-      // })
-
-      holdPosition = null // important
-    }
-  })
-  // .on('keyUp', (e) => {
-  //   moveable.updateRect()
-  // })
-  .on('rotate', ({ target, beforeDist, dist, transform }: any) => {
-    // console.log('onRotate', Number(this.dActiveElement.rotate) + Number(beforeDist + dist))
-    target.style.transform = transform
-    target.style.height = dActiveElement.value?.height + 'px' // 修正文字高度变化
-  })
-  .on('rotateEnd', (e: any) => {
-    const tf = e.target.style.transform
-    const iof = tf.indexOf('rotate')
-    let rotate = ''
-    if (iof != -1) {
-      const index = iof + 'rotate'.length
-      const half = tf.substring(index + 1)
-      rotate = half.slice(0, half.indexOf(')'))
-    }
-    rotate && widgetStore.updateWidgetData({
-      uuid: dActiveElement.value?.uuid || "",
-      key: 'rotate',
-      value: rotate,
+    .on('dragStart', ({ inputEvent, target, stop }) => {
+      if (!dActiveElement.value) return
+      if (inputEvent.target.nodeName === 'PRE') {
+        dActiveElement.value.editable && stop()
+      }
+      dActiveElement.value.lock && stop()
     })
+    .on('drag', ({ target, transform, left, top, inputEvent }) => {
+      // target!.style.transform = transform]
+      target!.style.left = `${left}px`
+      target!.style.top = `${top}px`
+      holdPosition = { left, top }
+    })
+    .on('dragEnd', ({ target, isDrag, inputEvent }) => {
+      // console.log('onDragEnd', inputEvent)
+      // TODO 清理mouseevent
+      widgetStore.setMouseEvent(null)
+      // store.commit('setMouseEvent', null)
 
-    // rotate &&
-    //   store.dispatch("updateWidgetData", {
-    //     uuid: dActiveElement.value.uuid,
-    //     key: 'rotate',
-    //     value: rotate,
-    //   })
-  })
-  .on('resizeStart', (args) => {
-    console.log(args.target.style.transform)
-    if (!moveable) return
-    
-    moveable.snappable = false
-    if (dActiveElement.value?.type === 'w-text') {
-      if (String(args.direction) === '1,0') {
-        moveable.keepRatio = false
-        moveable.scalable = false
-      }
-      if (String(args.direction) === '1,1') {
-        moveable.keepRatio = false
-        resizeStartWidth = (args.target as HTMLElement).offsetWidth
-        startHL = Number(args.target!.style.lineHeight.replace('px', ''))
-        startLS = Number(args.target!.style.letterSpacing.replace('px', ''))
-        resetRatio = 1
-      }
-    } else if (dActiveElement.value?.type === 'w-image' || dActiveElement.value?.type === 'w-qrcode' || dActiveElement.value?.type === 'w-svg') {
-      const dirs = ['1,0', '0,-1', '-1,0', '0,1']
-      dirs.includes(String(args.direction)) && (moveable.keepRatio = false)
-    }
-  })
-  .on('resize', (args: any) => {
-    const { target, width, height, dist, delta, clientX, clientY, direction } = args
-    if (dActiveElement.value?.type === 'w-text') {
-      if (String(direction) === '1,1') {
-        resetRatio = width / resizeStartWidth
-        target!.style.fontSize = (dActiveElement.value?.fontSize || 0) * resetRatio + 'px'
-        target!.style.letterSpacing = startLS * resetRatio + 'px'
-        target!.style.lineHeight = startHL * resetRatio + 'px'
-      }
-      target.style.width = width
-      target.style.height = height
-      resizeTempData = { width, height }
-      // moveable.updateRect()
-      target.style.backgroundImage = 'none'
-      // moveable.keepRatio !== this.resetRatio > 1 && (moveable.keepRatio = this.resetRatio > 1)
-    } else if (dActiveElement.value?.type == 'w-image' || dActiveElement.value?.type === 'w-qrcode' || dActiveElement.value?.type === 'w-svg') {
-      resizeTempData = { width, height }
-    } else if (dActiveElement.value?.type == 'w-group') {
-      // let record = this.dActiveElement.record
-      // this.dActiveElement.tempScale = width / record.width
-
-      widgetStore.resize({ width: width, height: height })
-      // store.commit('resize', { width: width, height: height })
-
-      // this.resizeTempData = { width, height }
-      // let record = this.dActiveElement.record
-      // setTransformAttribute(target, 'scale', width / record.width)
-    } else {
-      widgetStore.resize({ width: width, height: height })
-      // store.commit('resize', { width: width, height: height })
-    }
-    dActiveElement.value?.rotate && (target!.style.transform = target!.style.transform.replace('(0deg', `(${dActiveElement.value?.rotate}`))
-  })
-  .on('resizeEnd', (e: any) => {
-    if (!moveable) return
-    moveable.resizable = true
-    // moveable.scalable = true
-    moveable.snappable = true
-    if (e.lastEvent) {
-      // setTimeout(() => {
-      // if (this.dActiveElement.type === 'w-group') {
-      //   // 临时屏蔽，抖得太严重
-      //   return
-      // }
-      console.log('重置translate', dActiveElement.value)
-      // 转换成位置
-      // if (this.dActiveElement.cache && this.dActiveElement.cache.recordLeft) {
-      //   const left = e.lastEvent.drag.translate[0] + Number(this.dActiveElement.cache.recordLeft)
-      //   const top = e.lastEvent.drag.translate[1] + Number(this.dActiveElement.cache.recordTop)
-      //   this.dActiveElement.cache = { left, top }
-      // } else {
-      //   const left = e.lastEvent.drag.translate[0] + Number(this.dActiveElement.left)
-      //   const top = e.lastEvent.drag.translate[1] + Number(this.dActiveElement.top)
-      //   this.dActiveElement.cache = { left, top }
-      // }
-      const left = e.lastEvent.drag.translate[0]
-      const top = e.lastEvent.drag.translate[1]
-      widgetStore.updateWidgetMultiple({
-        uuid: dActiveElement.value?.uuid || "",
-        data: [
-          {
-            key: 'left',
-            value: Number(dActiveElement.value?.left) + left,
-          },
-          {
-            key: 'top',
-            value: Number(dActiveElement.value?.top) + top,
-          },
-        ],
-      })
-      // store.dispatch("updateWidgetMultiple", {
-      //   uuid: dActiveElement.value.uuid,
-      //   data: [
-      //     {
-      //       key: 'left',
-      //       value: Number(dActiveElement.value.left) + left,
-      //     },
-      //     {
-      //       key: 'top',
-      //       value: Number(dActiveElement.value.top) + top,
-      //     },
-      //   ],
-      // })
-      // 重置translate
-      const tf = e.target.style.transform
-      const iof = tf.indexOf('translate')
-      const FRONT = tf.slice(0, iof + 'translate'.length + 1)
-      const half = tf.substring(iof + 'translate'.length + 1)
-      const END = half.substring(half.indexOf(')'))
-      e.target.style.transform = FRONT + '0, 0' + END
-      // this.moveable.updateRect()
-      // }, 10)
-    }
-    if (resizeTempData) {
-      widgetStore.resize(resizeTempData)
-      // store.commit('resize', resizeTempData)
-
-      resizeTempData = null
-      // await this.$nextTick()
-      moveable.updateRect()
-      // 临时处理缩放后细线问题 https://github.com/palxiao/poster-design/issues/75
-      controlStore.setShowMoveable(false)
-      // store.commit('setShowMoveable', false)
-      setTimeout(() => {
-        controlStore.setShowMoveable(true)
-        // store.commit('setShowMoveable', true)
-      }, 10);
-    }
-    try {
-      if (dActiveElement.value?.type === 'w-text') {
-        const d = e.direction || e.lastEvent.direction
-        String(d) === '1,1' && (dActiveElement.value.fontSize = Number(dActiveElement.value?.fontSize) * resetRatio)
-      }
-    } catch (err) {}
-    moveable.keepRatio = true
-  })
-  .on('scaleStart', (e) => {
-    if (dActiveElement.value?.type === 'w-text') {
-      startHL = Number(e.target!.style.lineHeight.replace('px', ''))
-      startLS = Number(e.target!.style.letterSpacing.replace('px', ''))
-      resetRatio = 1
-    } else {
-      if (!moveable) return
-      moveable.scalable = false
-    }
-  })
-  .on('scale', (e) => {
-    if (!moveable) return
-    moveable.resizable = false
-    const { target, scale, transform } = e
-    resetRatio = scale[0]
-    target!.style.transform = transform
-    dActiveElement.value?.rotate && (target!.style.transform = target!.style.transform.replace('0deg', dActiveElement.value.rotate))
-  })
-  .on('scaleEnd', (e: any) => {
-    if (!moveable) return
-    moveable.resizable = true
-    // moveable.scalable = true
-    moveable.keepRatio = true
-    console.log(e.target.style.transform)
-    try {
-      if (dActiveElement.value?.type === 'w-text') {
-        const d = e.direction || e.lastEvent.direction
-        String(d) === '1,1' && (dActiveElement.value.fontSize = Number(dActiveElement.value.fontSize) * resetRatio)
-      }
-    } catch (err) {}
-  })
-  .on('dragGroup', (e) => {
-    e.inputEvent.stopPropagation()
-    e.inputEvent.preventDefault()
-    holdGroupPosition = {}
-    const events = e.events
-    for (let i = 0; i < events.length; i++) {
-      const ev = events[i]
-      const currentWidget = dWidgets.value.find((item: any) => item.uuid === ev.target.getAttribute('data-uuid'))
-      const left = Number(currentWidget?.left) + ev.beforeTranslate[0]
-      // debug -- start --
-      if (i === 1) {
-        console.log(Number(currentWidget?.left), ev.beforeTranslate[0])
-      }
-      // debug -- end --
-      const top = Number(currentWidget?.top) + ev.beforeTranslate[1]
-      ev.target.style.left = `${left}px`
-      ev.target.style.top = `${top}px`
-      holdGroupPosition[`${ev.target.getAttribute('data-uuid')}`] = { left, top }
-    }
-  })
-  .on('dragGroupEnd', (e) => {
-    for (const key in holdGroupPosition) {
-      if (Object.prototype.hasOwnProperty.call(holdGroupPosition, key)) {
-        const item = holdGroupPosition[key]
+      inputEvent.stopPropagation()
+      inputEvent.preventDefault()
+      // console.log(this.holdPosition, inputEvent.pageX, inputEvent.pageY)
+      if (holdPosition) {
         widgetStore.updateWidgetData({
-          uuid: key,
+          uuid: dActiveElement.value?.uuid || "",
           key: 'left',
-          value: item.left,
-        })
-        widgetStore.updateWidgetData({
-          uuid: key,
-          key: 'top',
-          value: item.top,
+          value: Number(holdPosition?.left),
         })
         // store.dispatch("updateWidgetData", {
-        //   uuid: key,
-        //   key: 'top',
-        //   value: item.top,
+        //   uuid: dActiveElement.value.uuid,
+        //   key: 'left',
+        //   value: Number(holdPosition?.left),
         // })
+
+        widgetStore.updateWidgetData({
+          uuid: dActiveElement.value?.uuid || "",
+          key: 'top',
+          value: Number(holdPosition?.top),
+        })
+        // store.dispatch("updateWidgetData", {
+        //   uuid: dActiveElement.value.uuid,
+        //   key: 'top',
+        //   value: Number(holdPosition?.top),
+        // })
+
+        holdPosition = null // important
       }
-    }
-    holdGroupPosition = null
-    // background: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
-    // background-size: 12px 1px;
-  })
-  .on('resizeGroupStart', ({ events }: any) => {
-    console.log(events)
-    // events.forEach((ev, i) => {
-    //     const frame = this.frames[i];
-    //     // Set origin if transform-origin use %.
-    //     ev.setOrigin(["%", "%"]);
+    })
+    // .on('keyUp', (e) => {
+    //   moveable.updateRect()
+    // })
+    .on('rotate', ({ target, beforeDist, dist, transform }: any) => {
+      // console.log('onRotate', Number(this.dActiveElement.rotate) + Number(beforeDist + dist))
+      target.style.transform = transform
+      target.style.height = dActiveElement.value?.height + 'px' // 修正文字高度变化
+    })
+    .on('rotateEnd', (e: any) => {
+      const tf = e.target.style.transform
+      const iof = tf.indexOf('rotate')
+      let rotate = ''
+      if (iof != -1) {
+        const index = iof + 'rotate'.length
+        const half = tf.substring(index + 1)
+        rotate = half.slice(0, half.indexOf(')'))
+      }
+      rotate && widgetStore.updateWidgetData({
+        uuid: dActiveElement.value?.uuid || "",
+        key: 'rotate',
+        value: rotate,
+      })
 
-    //     // If cssSize and offsetSize are different, set cssSize.
-    //     const style = window.getComputedStyle(ev.target);
-    //     const cssWidth = parseFloat(style.width);
-    //     const cssHeight = parseFloat(style.height);
-    //     ev.set([cssWidth, cssHeight]);
+      // rotate &&
+      //   store.dispatch("updateWidgetData", {
+      //     uuid: dActiveElement.value.uuid,
+      //     key: 'rotate',
+      //     value: rotate,
+      //   })
+    })
+    .on('resizeStart', (args) => {
+      console.log(args.target.style.transform)
+      if (!moveable) return
 
-    //     // If a drag event has already occurred, there is no dragStart.
-    //     ev.dragStart && ev.dragStart.set(frame.translate);
-    // });
-  })
-  .on('resizeGroup', (e: any) => {
-    // events.forEach(({ target, width, height, drag }, i) => {
-    //     const frame = this.frames[i];
-    //     target.style.width = `${width}px`;
-    //     target.style.height = `${height}px`;
-    //     // get drag event
-    //     frame.translate = drag.beforeTranslate;
-    //     target.style.transform
-    //         = `translate(${drag.beforeTranslate[0]}px, ${drag.beforeTranslate[1]}px)`;
-    // });
-  })
-  .on('resizeGroupEnd', ({ targets, isDrag }: any) => {
-    console.log('onResizeGroupEnd', targets, isDrag)
-  })
+      moveable.snappable = false
+      if (dActiveElement.value?.type === 'w-text') {
+        if (String(args.direction) === '1,0') {
+          moveable.keepRatio = false
+          moveable.scalable = false
+        }
+        if (String(args.direction) === '1,1') {
+          moveable.keepRatio = false
+          resizeStartWidth = (args.target as HTMLElement).offsetWidth
+          startHL = Number(args.target!.style.lineHeight.replace('px', ''))
+          startLS = Number(args.target!.style.letterSpacing.replace('px', ''))
+          resetRatio = 1
+        }
+      } else if (dActiveElement.value?.type === 'w-image' || dActiveElement.value?.type === 'w-qrcode' || dActiveElement.value?.type === 'w-svg') {
+        const dirs = ['1,0', '0,-1', '-1,0', '0,1']
+        dirs.includes(String(args.direction)) && (moveable.keepRatio = false)
+      }
+    })
+    .on('resize', (args: any) => {
+      const { target, width, height, dist, delta, clientX, clientY, direction } = args
+      if (dActiveElement.value?.type === 'w-text') {
+        if (String(direction) === '1,1') {
+          resetRatio = width / resizeStartWidth
+          target!.style.fontSize = (dActiveElement.value?.fontSize || 0) * resetRatio + 'px'
+          target!.style.letterSpacing = startLS * resetRatio + 'px'
+          target!.style.lineHeight = startHL * resetRatio + 'px'
+        }
+        target.style.width = width
+        target.style.height = height
+        resizeTempData = { width, height }
+        // moveable.updateRect()
+        target.style.backgroundImage = 'none'
+        // moveable.keepRatio !== this.resetRatio > 1 && (moveable.keepRatio = this.resetRatio > 1)
+      } else if (dActiveElement.value?.type == 'w-image' || dActiveElement.value?.type === 'w-qrcode' || dActiveElement.value?.type === 'w-svg') {
+        resizeTempData = { width, height }
+      } else if (dActiveElement.value?.type == 'w-group') {
+        // let record = this.dActiveElement.record
+        // this.dActiveElement.tempScale = width / record.width
+
+        widgetStore.resize({ width: width, height: height })
+        // store.commit('resize', { width: width, height: height })
+
+        // this.resizeTempData = { width, height }
+        // let record = this.dActiveElement.record
+        // setTransformAttribute(target, 'scale', width / record.width)
+      } else {
+        widgetStore.resize({ width: width, height: height })
+        // store.commit('resize', { width: width, height: height })
+      }
+      dActiveElement.value?.rotate && (target!.style.transform = target!.style.transform.replace('(0deg', `(${dActiveElement.value?.rotate}`))
+    })
+    .on('resizeEnd', (e: any) => {
+      if (!moveable) return
+      moveable.resizable = true
+      // moveable.scalable = true
+      moveable.snappable = true
+      if (e.lastEvent) {
+        // setTimeout(() => {
+        // if (this.dActiveElement.type === 'w-group') {
+        //   // 临时屏蔽，抖得太严重
+        //   return
+        // }
+        console.log('重置translate', dActiveElement.value)
+        // 转换成位置
+        // if (this.dActiveElement.cache && this.dActiveElement.cache.recordLeft) {
+        //   const left = e.lastEvent.drag.translate[0] + Number(this.dActiveElement.cache.recordLeft)
+        //   const top = e.lastEvent.drag.translate[1] + Number(this.dActiveElement.cache.recordTop)
+        //   this.dActiveElement.cache = { left, top }
+        // } else {
+        //   const left = e.lastEvent.drag.translate[0] + Number(this.dActiveElement.left)
+        //   const top = e.lastEvent.drag.translate[1] + Number(this.dActiveElement.top)
+        //   this.dActiveElement.cache = { left, top }
+        // }
+        const left = e.lastEvent.drag.translate[0]
+        const top = e.lastEvent.drag.translate[1]
+        widgetStore.updateWidgetMultiple({
+          uuid: dActiveElement.value?.uuid || "",
+          data: [
+            {
+              key: 'left',
+              value: Number(dActiveElement.value?.left) + left,
+            },
+            {
+              key: 'top',
+              value: Number(dActiveElement.value?.top) + top,
+            },
+          ],
+        })
+        // store.dispatch("updateWidgetMultiple", {
+        //   uuid: dActiveElement.value.uuid,
+        //   data: [
+        //     {
+        //       key: 'left',
+        //       value: Number(dActiveElement.value.left) + left,
+        //     },
+        //     {
+        //       key: 'top',
+        //       value: Number(dActiveElement.value.top) + top,
+        //     },
+        //   ],
+        // })
+        // 重置translate
+        const tf = e.target.style.transform
+        const iof = tf.indexOf('translate')
+        const FRONT = tf.slice(0, iof + 'translate'.length + 1)
+        const half = tf.substring(iof + 'translate'.length + 1)
+        const END = half.substring(half.indexOf(')'))
+        e.target.style.transform = FRONT + '0, 0' + END
+        // this.moveable.updateRect()
+        // }, 10)
+      }
+      if (resizeTempData) {
+        widgetStore.resize(resizeTempData)
+        // store.commit('resize', resizeTempData)
+
+        resizeTempData = null
+        // await this.$nextTick()
+        moveable.updateRect()
+        // 临时处理缩放后细线问题 https://github.com/palxiao/poster-design/issues/75
+        controlStore.setShowMoveable(false)
+        // store.commit('setShowMoveable', false)
+        setTimeout(() => {
+          controlStore.setShowMoveable(true)
+          // store.commit('setShowMoveable', true)
+        }, 10);
+      }
+      try {
+        if (dActiveElement.value?.type === 'w-text') {
+          const d = e.direction || e.lastEvent.direction
+          String(d) === '1,1' && (dActiveElement.value.fontSize = Number(dActiveElement.value?.fontSize) * resetRatio)
+        }
+      } catch (err) { }
+      moveable.keepRatio = true
+    })
+    .on('scaleStart', (e) => {
+      if (dActiveElement.value?.type === 'w-text') {
+        startHL = Number(e.target!.style.lineHeight.replace('px', ''))
+        startLS = Number(e.target!.style.letterSpacing.replace('px', ''))
+        resetRatio = 1
+      } else {
+        if (!moveable) return
+        moveable.scalable = false
+      }
+    })
+    .on('scale', (e) => {
+      if (!moveable) return
+      moveable.resizable = false
+      const { target, scale, transform } = e
+      resetRatio = scale[0]
+      target!.style.transform = transform
+      dActiveElement.value?.rotate && (target!.style.transform = target!.style.transform.replace('0deg', dActiveElement.value.rotate))
+    })
+    .on('scaleEnd', (e: any) => {
+      if (!moveable) return
+      moveable.resizable = true
+      // moveable.scalable = true
+      moveable.keepRatio = true
+      console.log(e.target.style.transform)
+      try {
+        if (dActiveElement.value?.type === 'w-text') {
+          const d = e.direction || e.lastEvent.direction
+          String(d) === '1,1' && (dActiveElement.value.fontSize = Number(dActiveElement.value.fontSize) * resetRatio)
+        }
+      } catch (err) { }
+    })
+    .on('dragGroup', (e) => {
+      e.inputEvent.stopPropagation()
+      e.inputEvent.preventDefault()
+      holdGroupPosition = {}
+      const events = e.events
+      for (let i = 0; i < events.length; i++) {
+        const ev = events[i]
+        const currentWidget = dWidgets.value.find((item: any) => item.uuid === ev.target.getAttribute('data-uuid'))
+        const left = Number(currentWidget?.left) + ev.beforeTranslate[0]
+        // debug -- start --
+        if (i === 1) {
+          console.log(Number(currentWidget?.left), ev.beforeTranslate[0])
+        }
+        // debug -- end --
+        const top = Number(currentWidget?.top) + ev.beforeTranslate[1]
+        ev.target.style.left = `${left}px`
+        ev.target.style.top = `${top}px`
+        holdGroupPosition[`${ev.target.getAttribute('data-uuid')}`] = { left, top }
+      }
+    })
+    .on('dragGroupEnd', (e) => {
+      for (const key in holdGroupPosition) {
+        if (Object.prototype.hasOwnProperty.call(holdGroupPosition, key)) {
+          const item = holdGroupPosition[key]
+          widgetStore.updateWidgetData({
+            uuid: key,
+            key: 'left',
+            value: item.left,
+          })
+          widgetStore.updateWidgetData({
+            uuid: key,
+            key: 'top',
+            value: item.top,
+          })
+          // store.dispatch("updateWidgetData", {
+          //   uuid: key,
+          //   key: 'top',
+          //   value: item.top,
+          // })
+        }
+      }
+      holdGroupPosition = null
+      // background: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+      // background-size: 12px 1px;
+    })
+    .on('resizeGroupStart', ({ events }: any) => {
+      console.log(events)
+      // events.forEach((ev, i) => {
+      //     const frame = this.frames[i];
+      //     // Set origin if transform-origin use %.
+      //     ev.setOrigin(["%", "%"]);
+
+      //     // If cssSize and offsetSize are different, set cssSize.
+      //     const style = window.getComputedStyle(ev.target);
+      //     const cssWidth = parseFloat(style.width);
+      //     const cssHeight = parseFloat(style.height);
+      //     ev.set([cssWidth, cssHeight]);
+
+      //     // If a drag event has already occurred, there is no dragStart.
+      //     ev.dragStart && ev.dragStart.set(frame.translate);
+      // });
+    })
+    .on('resizeGroup', (e: any) => {
+      // events.forEach(({ target, width, height, drag }, i) => {
+      //     const frame = this.frames[i];
+      //     target.style.width = `${width}px`;
+      //     target.style.height = `${height}px`;
+      //     // get drag event
+      //     frame.translate = drag.beforeTranslate;
+      //     target.style.transform
+      //         = `translate(${drag.beforeTranslate[0]}px, ${drag.beforeTranslate[1]}px)`;
+      // });
+    })
+    .on('resizeGroupEnd', ({ targets, isDrag }: any) => {
+      console.log('onResizeGroupEnd', targets, isDrag)
+    })
 
   // -- 选择功能 Start --
   useSelecto(moveable)
