@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-01 14:12:08
- * @Description: 快捷键，目前是mixin形式放入views/index.vue中
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 19:17:51
- */
 import keyCodeOptions from './methods/keyCodeOptions'
 import dealWithCtrl from './methods/dealWithCtrl'
 import { TControlStore } from '@/store/design/control'

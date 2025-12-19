@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-08-23 17:37:16
- * @Description: 提取字体子集
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-12-28 19:52:55
- */
 /**
  * 只有ttf/otf这种原始字体支持提取，如果服务端不支持该功能请设置false，以保证页面能加载字体。
  */

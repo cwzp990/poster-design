@@ -1,12 +1,4 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2021-08-19 18:43:22
- * @Description:
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-16 19:10:18
- */
 import { useControlStore, useWidgetStore } from '@/store'
-// import store from '@/store'
 
 const move = {
   methods: {

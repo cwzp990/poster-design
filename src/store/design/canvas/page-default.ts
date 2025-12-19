@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2024-04-16 10:06:23
- * @Description:  
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-19 15:42:40
- */
 export default {
   name: '新画板',
   type: 'page',

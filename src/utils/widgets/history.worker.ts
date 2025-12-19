@@ -1,10 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2023-09-14 11:33:44
- * @Description: 历史记录处理（无效
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2024-04-18 20:06:51
- */
 import diff from 'microdiff'
 import { produce, applyPatches, enablePatches } from 'immer'
 enablePatches()

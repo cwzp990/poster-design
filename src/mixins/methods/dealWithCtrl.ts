@@ -1,11 +1,3 @@
-/*
- * @Author: ShawnPhang
- * @Date: 2022-03-09 16:29:54
- * @Description: 处理和ctrl建相关的操作
- * @LastEditors: ShawnPhang <https://m.palxp.cn>
- * @LastEditTime: 2025-03-22 12:56:29
- */
-// import store from '@/store'
 import handlePaste from './handlePaste'
 import { useGroupStore, useHistoryStore, useWidgetStore } from '@/store'
 
